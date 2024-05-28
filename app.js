@@ -38,8 +38,8 @@ function keyHandler(event) {
     if (event.key == 'Enter') {
         event.preventDefault();
         document.getElementById('send-btn')
-        userInput.value = ''
-userMessage.innerHTML = `<li class="user">${userInput.value}</li>`
-    }
+userMessage.innerHTML += `<li class="user">${userInput.value}</li>`
+userInput.value = ''
+}
 }
 document.getElementById('user-input').addEventListener('keydown',keyHandler)
