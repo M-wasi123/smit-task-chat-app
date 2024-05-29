@@ -26,7 +26,7 @@ fileDisplayArea.style.display= 'block'
     reader.readAsDataURL(file);
 });
 let userMessage = document.getElementById('user-message')
-let userInput = document.getElementById('user-input');
+var userInput = document.getElementById('user-input');
 
 userInput.addEventListener('keydown',function () {
     document.getElementById('send-btn').style.display = 'block'
@@ -43,6 +43,7 @@ userInput.addEventListener('keyup',function () {
         document.getElementsByClassName('icons')[2].style.display = 'block'
     }
 })
+// var userInpu = userInput.value.toLowerCase()
 function keyHandler(event) {
     if (event.key == 'Enter') {
         event.preventDefault();
@@ -51,8 +52,9 @@ function keyHandler(event) {
         let randomMessage = messagesObj[Math.floor(Math.random() * messagesObj.length)];
         let key = Object.keys(randomMessage);
 let message = randomMessage[key];
+
 userMessage.innerHTML += `<li class="user">${userInput.value}</li>`
-if (userInput.value == 'hellow'||userInput.value == 'hi') {
+if (userInput.value == 'hellow'||userInput.value == 'hi' ||userInput.value == 'Hellow'||userInput.value == 'Hi') {
     userMessage.innerHTML += `<li class='auto-answer'>How are you</li>`
     userInput.value = ''
 }
@@ -87,7 +89,6 @@ function keyHandle(even) {
     let randomMessage = messagesObj[Math.floor(Math.random() * messagesObj.length)];
         let key = Object.keys(randomMessage);
 let message = randomMessage[key];
-
 userMessage.innerHTML += `<li class="user">${userInput.value}</li>`
 if (userInput.value == 'hellow'||userInput.value == 'hi') {
     userMessage.innerHTML += `<li class='auto-answer'>How are you</li>`
