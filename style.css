@@ -163,6 +163,7 @@ background-image: linear-gradient(to left top , rgb(247, 174, 186),rgb(241, 164,
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    padding: 2px 5px;
 }
 .user{
     width: auto;
@@ -193,6 +194,16 @@ background-image: linear-gradient(to left top , rgb(247, 174, 186),rgb(241, 164,
     list-style: none;
     border-radius: 25px 10px;
     background-color: rgb(241, 212, 174);
+}
+::-webkit-scrollbar{
+    width: 5px;
+    border-radius: 20px;
+    box-shadow: inset 1px 1px 5px 1px rgb(216, 212, 212);
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    width: 5px;
+    background-color: rgb(160, 159, 159);
 }
 @media only screen and (max-width:500px) {
     #form{

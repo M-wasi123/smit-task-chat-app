@@ -48,24 +48,32 @@ function keyHandler(event) {
         event.preventDefault();
         document.getElementById('send-btn')
         autoScroll()
+        let randomMessage = messagesObj[Math.floor(Math.random() * messagesObj.length)];
+        let key = Object.keys(randomMessage);
+let message = randomMessage[key];
 userMessage.innerHTML += `<li class="user">${userInput.value}</li>`
 if (userInput.value == 'hellow'||userInput.value == 'hi') {
     userMessage.innerHTML += `<li class='auto-answer'>How are you</li>`
     userInput.value = ''
-}if (userInput.value == 'i am fine') {
+}
+else if (userInput.value == 'i am fine') {
         userMessage.innerHTML += `<li class='auto-answer'>What is your age</li>`
         userInput.value = ''
-}if (userInput.value > 18) {
+}
+else if (userInput.value > 18) {
         userMessage.innerHTML += `<li class='auto-answer'>You are young</li>`
         userInput.value = ''
-}if (userInput.value < 18 && userInput.value > 0) {
+}
+else if (userInput.value < 18 && userInput.value > 0) {
         userMessage.innerHTML += `<li class='auto-answer'>You are children</li>`
         userInput.value = ''
 }
-if (userInput.value > 49) {
+
+else if (userInput.value > 49) {
         userMessage.innerHTML += `<li class='auto-answer'>You are old man</li>`
         userInput.value = ''
-}else{
+}
+else{
         userMessage.innerHTML += `<li class='auto-answer'>${message}</li>`
         userInput.value = ''
 }
@@ -76,23 +84,32 @@ function keyHandle(even) {
     even.preventDefault();
     document.getElementById('send-btn')
     autoScroll()
+    let randomMessage = messagesObj[Math.floor(Math.random() * messagesObj.length)];
+        let key = Object.keys(randomMessage);
+let message = randomMessage[key];
+
 userMessage.innerHTML += `<li class="user">${userInput.value}</li>`
 if (userInput.value == 'hellow'||userInput.value == 'hi') {
     userMessage.innerHTML += `<li class='auto-answer'>How are you</li>`
     userInput.value = ''
-}if (userInput.value == 'i am fine') {
+}
+else if (userInput.value == 'i am fine') {
         userMessage.innerHTML += `<li class='auto-answer'>What is your age</li>`
         userInput.value = ''
-}if (userInput.value > 17) {
+}
+else if (userInput.value > 17) {
         userMessage.innerHTML += `<li class='auto-answer'>You are young</li>`
         userInput.value = ''
-}if (userInput.value < 18) {
+}
+else if (userInput.value < 18) {
         // userMessage.innerHTML += `<li class='auto-answer'>You are children</li>`
         userInput.value = ''
-}if (userInput.value > 49) {
+}
+else if (userInput.value > 49) {
         userMessage.innerHTML += `<li class='auto-answer'>You are old man</li>`
         userInput.value = ''
-}else{
+}
+else{
         userMessage.innerHTML += `<li class='auto-answer'>${message}</li>`
         userInput.value = ''
 }
@@ -110,14 +127,10 @@ const messagesObj = [
     { nr: 'May sonay jaraha hon' }
  ];
  
- let randomMessage = messagesObj[Math.floor(Math.random() * messagesObj.length)];
- 
- let key = Object.keys(randomMessage);
- let message = randomMessage[key];
- message.reload()
+
 //  console.log(`Message: ${message}`);
 // console.log(arr)
 // console.log(messagesObj.value)
 function autoScroll() {
-    userMessage.scrollTo(0, 10000)
+    userMessage.scrollTo(0, 500)
 }
