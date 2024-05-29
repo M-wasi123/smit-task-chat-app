@@ -213,6 +213,7 @@ background-image: linear-gradient(to left top , rgb(247, 174, 186),rgb(241, 164,
     .messages{
         border: none;
         border-radius: 0px;
+        height: 90vh;
     }
     .profile{
         border-radius: 0px;
