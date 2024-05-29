@@ -226,4 +226,7 @@ background-image: linear-gradient(to left top , rgb(247, 174, 186),rgb(241, 164,
     background-image: linear-gradient(to left top , rgb(247, 174, 186),rgb(241, 164, 241));
     
     }
+    #user-message{
+        max-height: 70vh;
+    }
 }
