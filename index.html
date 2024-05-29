@@ -10,18 +10,18 @@
     <script defer src="app.js"></script>
 </head>
 <body>
-        <form action="">
+        <div id="form">
             <label for=""><strong>What is your name.</strong></label>
-            <input type="text" id="name">
+            <input type="text" id="name" placeholder="Type your name...">
             <label > <strong>Upload you image.</strong></label>
-            <input type="file" id="file" >
-
-        </form>
-        <div class="messages">
+            <input type="file" id="file">
+            <!-- <div id="fileDisplayArea" class="user-image"></div>  -->
+<input type="submit" value="Register" id="reg-btn" onclick="register()">
+        </div>
+        <div class="messages" id="message">
             <div class="profile">
                 <i class="fa fa-arrow-left" id="icon-right"></i>
                 <p id="user-name"></p>
-              
                 <div id="fileDisplayArea" class="user-image"></div> 
             </div>
         <div id="chat-box" class="chat-box">
