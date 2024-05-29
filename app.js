@@ -42,4 +42,17 @@ userMessage.innerHTML += `<li class="user">${userInput.value}</li>`
 userInput.value = ''
 }
 }
+function keyHandle(even) {
+    even.preventDefault();
+    document.getElementById('send-btn')
+userMessage.innerHTML += `<li class="user">${userInput.value}</li>`
+userInput.value = ''
+}
 document.getElementById('user-input').addEventListener('keydown',keyHandler)
+document.getElementById('send-btn').addEventListener('click',keyHandle)
+
+const messagesObj = [
+    {
+        salam:`<li class='auto-answer'>Walaikumsalaam Kiya Hal hain ${}`
+    }
+]
