@@ -32,7 +32,7 @@ fileDisplayArea.style.display= 'block'
 
 
 userInput.addEventListener('keydown',function () {
-    if (userInput.value.length > 0) {
+    if (userInput.value.length > 0 && userInput.value !== ' ') {
         
                 document.getElementById('send-btn').style.display = 'block'
                 document.getElementsByClassName('icons')[0].style.display = 'none'
@@ -56,7 +56,7 @@ function keyHandler(event) {
         let key = Object.keys(randomMessage);
 let message = randomMessage[key];
 
-if (userInput.value.length > 0) {
+if (userInput.value.length > 0 && userInput.value !== ' ') {
      userMessage.innerHTML += `<li class="user">${userInput.value}</li>`
     if (userInput.value == 'hellow'||userInput.value == 'hi' ||userInput.value == 'Hellow'||userInput.value == 'Hi') {
         userMessage.innerHTML += `<li class='auto-answer'>How are you</li>`
@@ -79,6 +79,7 @@ if (userInput.value.length > 0) {
             userMessage.innerHTML += `<li class='auto-answer'>You are old man</li>`
             userInput.value = ''
     }
+    
     else{
             userMessage.innerHTML += `<li class='auto-answer'>${message}</li>`
             userInput.value = ''
@@ -95,7 +96,7 @@ function keyHandle(even) {
         let key = Object.keys(randomMessage);
 let message = randomMessage[key];
 
-if (userInput.value.length > 0) {
+if (userInput.value.length > 0 && userInput.value !== ' ') {
     userMessage.innerHTML += `<li class="user">${userInput.value}</li>`
     if (userInput.value == 'hellow'||userInput.value == 'hi' ||userInput.value == 'Hellow'||userInput.value == 'Hi') {
         userMessage.innerHTML += `<li class='auto-answer'>How are you</li>`
