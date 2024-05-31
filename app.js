@@ -1,4 +1,7 @@
 let userName = document.getElementById('name')
+let userMessage = document.getElementById('user-message')
+var userInput = document.getElementById('user-input');
+
 function register() {
     if (userName.value !== '' ) {
         document.getElementById('user-name').innerHTML = userName.value;
@@ -26,97 +29,105 @@ fileDisplayArea.style.display= 'block'
 
     reader.readAsDataURL(file);
 });
-let userMessage = document.getElementById('user-message')
-var userInput = document.getElementById('user-input');
+
 
 userInput.addEventListener('keydown',function () {
-    document.getElementById('send-btn').style.display = 'block'
-    document.getElementsByClassName('icons')[0].style.display = 'none'
-    document.getElementsByClassName('icons')[1].style.display = 'none'
-    document.getElementsByClassName('icons')[2].style.display = 'none'
-
+    if (userInput.value.length > 0) {
+        
+                document.getElementById('send-btn').style.display = 'block'
+                document.getElementsByClassName('icons')[0].style.display = 'none'
+                document.getElementsByClassName('icons')[1].style.display = 'none'
+                document.getElementsByClassName('icons')[2].style.display = 'none'
+    }    
+        
 })
 userInput.addEventListener('keyup',function () {
-    if (userInput.value == '') {
+    if (userInput.value == '' ) {
         document.getElementById('send-btn').style.display = 'none'
         document.getElementsByClassName('icons')[0].style.display = 'block'
         document.getElementsByClassName('icons')[1].style.display = 'block'
         document.getElementsByClassName('icons')[2].style.display = 'block'
     }
 })
-// var userInpu = userInput.value.toLowerCase()
 function keyHandler(event) {
     if (event.key == 'Enter') {
         event.preventDefault();
-        document.getElementById('send-btn')
-        autoScroll()
         let randomMessage = messagesObj[Math.floor(Math.random() * messagesObj.length)];
         let key = Object.keys(randomMessage);
 let message = randomMessage[key];
 
-userMessage.innerHTML += `<li class="user">${userInput.value}</li>`
-if (userInput.value == 'hellow'||userInput.value == 'hi' ||userInput.value == 'Hellow'||userInput.value == 'Hi') {
-    userMessage.innerHTML += `<li class='auto-answer'>How are you</li>`
-    userInput.value = ''
-}
-else if (userInput.value == 'i am fine') {
-        userMessage.innerHTML += `<li class='auto-answer'>What is your age</li>`
+if (userInput.value.length > 0) {
+     userMessage.innerHTML += `<li class="user">${userInput.value}</li>`
+    if (userInput.value == 'hellow'||userInput.value == 'hi' ||userInput.value == 'Hellow'||userInput.value == 'Hi') {
+        userMessage.innerHTML += `<li class='auto-answer'>How are you</li>`
         userInput.value = ''
+    }
+    else if (userInput.value == 'i am fine') {
+            userMessage.innerHTML += `<li class='auto-answer'>What is your age</li>`
+            userInput.value = ''
+    }
+    else if (userInput.value > 18) {
+            userMessage.innerHTML += `<li class='auto-answer'>You are young</li>`
+            userInput.value = ''
+    }
+    else if (userInput.value < 18 && userInput.value > 0) {
+            userMessage.innerHTML += `<li class='auto-answer'>You are children</li>`
+            userInput.value = ''
+    }
+    
+    else if (userInput.value > 49) {
+            userMessage.innerHTML += `<li class='auto-answer'>You are old man</li>`
+            userInput.value = ''
+    }
+    else{
+            userMessage.innerHTML += `<li class='auto-answer'>${message}</li>`
+            userInput.value = ''
+    }
+    autoScroll();
+    
 }
-else if (userInput.value > 18) {
-        userMessage.innerHTML += `<li class='auto-answer'>You are young</li>`
-        userInput.value = ''
-}
-else if (userInput.value < 18 && userInput.value > 0) {
-        userMessage.innerHTML += `<li class='auto-answer'>You are children</li>`
-        userInput.value = ''
-}
-
-else if (userInput.value > 49) {
-        userMessage.innerHTML += `<li class='auto-answer'>You are old man</li>`
-        userInput.value = ''
-}
-else{
-        userMessage.innerHTML += `<li class='auto-answer'>${message}</li>`
-        userInput.value = ''
-}
-
 }
 }
 function keyHandle(even) {
     even.preventDefault();
     document.getElementById('send-btn')
-    autoScroll()
     let randomMessage = messagesObj[Math.floor(Math.random() * messagesObj.length)];
         let key = Object.keys(randomMessage);
 let message = randomMessage[key];
-userMessage.innerHTML += `<li class="user">${userInput.value}</li>`
-if (userInput.value == 'hellow'||userInput.value == 'hi') {
-    userMessage.innerHTML += `<li class='auto-answer'>How are you</li>`
-    userInput.value = ''
-}
-else if (userInput.value == 'i am fine') {
-        userMessage.innerHTML += `<li class='auto-answer'>What is your age</li>`
+
+if (userInput.value.length > 0) {
+    userMessage.innerHTML += `<li class="user">${userInput.value}</li>`
+    if (userInput.value == 'hellow'||userInput.value == 'hi' ||userInput.value == 'Hellow'||userInput.value == 'Hi') {
+        userMessage.innerHTML += `<li class='auto-answer'>How are you</li>`
         userInput.value = ''
+    }
+    else if (userInput.value == 'i am fine') {
+            userMessage.innerHTML += `<li class='auto-answer'>What is your age</li>`
+            userInput.value = ''
+    }
+    else if (userInput.value > 18) {
+            userMessage.innerHTML += `<li class='auto-answer'>You are young</li>`
+            userInput.value = ''
+    }
+    else if (userInput.value < 18 && userInput.value > 0) {
+            userMessage.innerHTML += `<li class='auto-answer'>You are children</li>`
+            userInput.value = ''
+    }
+    
+    else if (userInput.value > 49) {
+            userMessage.innerHTML += `<li class='auto-answer'>You are old man</li>`
+            userInput.value = ''
+    }
+    else{
+            userMessage.innerHTML += `<li class='auto-answer'>${message}</li>`
+            userInput.value = ''
+    }
+    autoScroll();
+    
 }
-else if (userInput.value > 17) {
-        userMessage.innerHTML += `<li class='auto-answer'>You are young</li>`
-        userInput.value = ''
-}
-else if (userInput.value < 18) {
-        // userMessage.innerHTML += `<li class='auto-answer'>You are children</li>`
-        userInput.value = ''
-}
-else if (userInput.value > 49) {
-        userMessage.innerHTML += `<li class='auto-answer'>You are old man</li>`
-        userInput.value = ''
-}
-else{
-        userMessage.innerHTML += `<li class='auto-answer'>${message}</li>`
-        userInput.value = ''
 }
 
-}
+
 document.getElementById('user-input').addEventListener('keydown',keyHandler)
 document.getElementById('send-btn').addEventListener('click',keyHandle)
 
@@ -126,7 +137,10 @@ const messagesObj = [
     { hy: 'May samjha nahi kiya khay rahay hain' },
     { tb: 'Tabyet to theek hay app ki' },
     { me: 'Mujhay tang mat kero' },
-    { nr: 'May sonay jaraha hon' }
+    { nr: 'May sonay jaraha hon' },
+    {re: 'Meray dost ko salam'},
+    {tr: 'App kahan jarahay hain'},
+    {gf: "Mujhay neend arahi hay"}
  ];
  
 
@@ -134,5 +148,6 @@ const messagesObj = [
 // console.log(arr)
 // console.log(messagesObj.value)
 function autoScroll() {
-    userMessage.scrollTo(0, 500)
+    userMessage.scrollTop = userMessage.scrollHeight
 }
+// userInput.value.trim()
