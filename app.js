@@ -3,6 +3,7 @@ function register() {
     if (userName.value !== '' ) {
         document.getElementById('user-name').innerHTML = userName.value;
         document.getElementById('message').style.display= 'block'
+        document.getElementById('form').style.display = 'hidden'
     }else{
         alert('Please enter your name')
     }
