@@ -273,7 +273,5 @@ width: 100%;
     background-image: linear-gradient(to left top , rgb(247, 174, 186),rgb(241, 164, 241));
     border-radius: 0px;
     }
-    #user-message{
-        max-height: 70vh;
-    }
+
 }
