@@ -3,11 +3,15 @@ let userMessage = document.getElementById('user-message')
 var userInput = document.getElementById('user-input');
 
 function register() {
-    if (userName.value !== '' ) {
+    if (userName.value.length > 2) {
         document.getElementById('user-name').innerHTML = userName.value;
+       
         document.getElementById('message').style.display= 'block'
         document.getElementById('form').style.display = 'hidden'
-    }else{
+    }else if (userName.value.length >! 2) {
+        alert('Please enter valid name')
+    }
+    else{
         alert('Please enter your name')
     }
 }
@@ -66,7 +70,7 @@ if (userInput.value.length > 0 && userInput.value !== ' ') {
             userMessage.innerHTML += `<li class='auto-answer'>What is your age</li>`
             userInput.value = ''
     }
-    else if (userInput.value > 18) {
+    else if (userInput.value > 17 && userInput.value < 49) {
             userMessage.innerHTML += `<li class='auto-answer'>You are young</li>`
             userInput.value = ''
     }
@@ -75,7 +79,7 @@ if (userInput.value.length > 0 && userInput.value !== ' ') {
             userInput.value = ''
     }
     
-    else if (userInput.value > 49) {
+    else if (userInput.value > 48) {
             userMessage.innerHTML += `<li class='auto-answer'>You are old man</li>`
             userInput.value = ''
     }
